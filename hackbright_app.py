@@ -11,14 +11,13 @@ def get_student_by_github(github):
 Student: %s %s
 Github account: %s"""%(row[0], row[1], row[2])
 
+
 def get_project_by_title(title):
     query = """SELECT title FROM Projects WHERE title = ?"""
     DB.execute(query, (title,))
     row = DB.fetchone()
     print """
 Title: %s"""%(title)
-
-
 
 def connect_to_db():
     global DB, CONN
